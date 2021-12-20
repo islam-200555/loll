@@ -128,7 +128,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**🔄 تتم تشغيل انتظر قليلا**")
+            huehue = await replied.reply("**💕 ثانيه وهشغلك يقلبي 💕**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -173,10 +173,10 @@ async def play(client, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply("يجب عليك الرد على الاغنيه او وضع اسمها مع الامر")
+            await m.reply("حط يبرو اسم الاغنيه او الرابط او الملف")
         else:
             await m.delete()
-            huehue = await m.reply("🔎 جاري البحث الرجاء الانتظار ")
+            huehue = await m.reply("🔎 ببحثلك اهو يبرو ثواني ❤")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -236,7 +236,7 @@ async def vplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**🔄 تتم العملية**")
+            huehue = await replied.reply("**🔄 جار البحث يقمر 💕**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -296,7 +296,7 @@ async def vplay(client, m: Message):
     else:
         if len(m.command) < 2:
             await m.reply(
-                "**يجب الرد على الفيديو او وضع الاسم للبحث عنها وتشغيلها**"
+                "**حط اسم الفيديو او الرابط او ابحث عليها يا يبرو**"
             )
         else:
             await m.delete()
@@ -428,4 +428,4 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**• لم يتم تشغيل اي شي اصلا**")
+        await m.reply("**• مشغلتش حاجه يبرو 😂**")
